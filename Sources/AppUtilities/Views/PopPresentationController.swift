@@ -133,11 +133,7 @@ open class PopPresentationController: UIPresentationController {
             height: UIView.layoutFittingCompressedSize.height
         )
         
-        var size = presentedView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
-        
-        if size.width == .zero || size.height == .zero {
-            size = presentedViewController.preferredContentSize
-        }
+        var size = presentedViewController.preferredContentSize
         
         if size.height >= (containerView.frame.height - keyboardHeight) {
             size.height = containerView.frame.height - 0 - keyboardHeight
